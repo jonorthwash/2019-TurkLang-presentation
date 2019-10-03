@@ -424,9 +424,9 @@
 
 				<section>
 					<h2>Overview</h2>
-					<p>
+					<div class="box">
 						We present a collection of Free/Open-Source <span class="highlight-green">morphological transducers</span> and <span class="highlight-green">machine translation systems</span> for Turkic languages.
-					</p>
+					</div>
 					<ul>
 						<li>Motivation for:
 						<ul>
@@ -533,21 +533,26 @@
 					ал<tag>vaux</tag><tag>neg</tag><tag>ger_fut</tag><tag>px3sp</tag><tag>nom</tag>
 						</td></tr>
 					</table>
+					<ul>
+						<li>Spell checkers</li>
+						<li></li>
+						<li>Linguistic research</li>
+					</ul>
 				</section>
 
 				<section>
 					<h2>Morphological transducers: Languages</h2>
 					<div style="width: 30%; float:right;">
 
-						92%-98% coverage
+						Production-level: 92%-98% coverage
 					</div>
 					<div style="width: 30%; float:right;">
 
-						88-93% coverage 
+						Working: 88-93% coverage 
 					</div>
 					<div style="width: 30%; float:right;">
 
-						&lt;80% coverage
+						Prototype: &lt;80% coverage
 					</div>
 				</section>
 
@@ -569,6 +574,27 @@
 						<li>Standard Apertium RBMT pipeline</li>
 					</ul>
 					<img style="width: 100% !important;" class="noframe" src="img/architecture.svg"/>
+				</section>
+
+				<section>
+					<h2>Machine translation systems: example</h2>
+					<ul>
+						<li>input: <ex>yahşı vaqıt edi</ex></li>
+						<li>morphological analysis: <div class="codeblock">^yahşı/yahşı<tag>adj</tag>/yahşı<tag>adj</tag><tag>subst</tag><tag>nom</tag>/yahşı<tag>adj</tag>+e<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>sg</tag>/yahşı<tag>adj</tag><tag>subst</tag><tag>nom</tag>+e<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>sg</tag>$ ^vaqıt/vaqıt<tag>n</tag><tag>nom</tag>/vaqıt<tag>n</tag><tag>attr</tag>/vaqıt<tag>n</tag><tag>nom</tag>+e<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>sg</tag>$ ^edi/e<tag>cop</tag><tag>ifi</tag><tag>p3</tag><tag>sg</tag>/e<tag>vaux</tag><tag>ifi</tag><tag>p3</tag><tag>sg</tag>$^./.<tag>sent</tag>$</div></li>
+						<li>disambiguation: <div class="codeblock">
+						^yahşı/yahşı<tag>adj</tag>$ ^vaqıt/vaqıt<tag>n</tag><tag>nom</tag>$ ^edi/e<tag>cop</tag><tag>ifi</tag><tag>p3</tag><tag>sg</tag>$^./.<tag>sent</tag>$
+						</div></li>
+						<li>lexical transfer: <div class="codeblock">
+						^yahşı<tag>adj</tag>/iyi<tag>adj</tag>$ ^vaqıt<tag>n</tag><tag>nom</tag>/vakit<tag>n</tag><tag>nom</tag>/süre<tag>n</tag><tag>nom</tag>$ ^e<tag>cop</tag><tag>ifi</tag><tag>p3</tag><tag>sg</tag>/i<tag>cop</tag><tag>ifi</tag><tag>p3</tag><tag>sg</tag>$^.<tag>sent</tag>/.<tag>sent</tag>$
+						</div></li>
+						<li>lexical selection:</li> <div class="codeblock">
+						^yahşı<tag>adj</tag>/iyi<tag>adj</tag>$ ^vaqıt<tag>n</tag><tag>nom</tag>/vakit<tag>n</tag><tag>nom</tag>$ ^e<tag>cop</tag><tag>ifi</tag><tag>p3</tag><tag>sg</tag>/i<tag>cop</tag><tag>ifi</tag><tag>p3</tag><tag>sg</tag>$^.<tag>sent</tag>/.<tag>sent</tag>$
+						</div></li>
+						<li>structural transfer: <div class="codeblock">
+						^iyi<tag>adj</tag>$ ^vakit<tag>n</tag><tag>nom</tag>+i<tag>cop</tag><tag>ifi</tag><tag>p3</tag><tag>sg</tag>$
+						</div></li>
+						<li>morphological generation: <ex>iyi vakitti</ex></li>
+					</ul>
 				</section>
 
 				<section>
