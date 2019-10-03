@@ -87,6 +87,10 @@
 			.highlight-green {
 				color: lightgreen;
 			}
+			bb {
+				font-weight: bold ;
+				color: lightgreen ;
+			}
 			.highlight-cyan {
 				color: cyan;
 			}
@@ -142,13 +146,13 @@
 				height: 15px;
 			}
 			table.shrink tr td {
-				font-size: 78%;
+				font-size: 170% !important;
 				padding: -3px;
 				padding-right: 8pt;
 			}
 
 			table.shrink tr th {
-				font-size: 75%;
+				font-size: 170% !important;
 				padding: -3px;
 				padding-right: 8pt;
 				vertical-align: bottom ;
@@ -425,7 +429,7 @@
 				<section>
 					<h2>Overview</h2>
 					<div class="box">
-						We present a collection of Free/Open-Source <span class="highlight-green">morphological transducers</span> and <span class="highlight-green">machine translation systems</span> for Turkic languages.
+						We present a collection of <span class="highlight-cyan">Free/Open-Source</span><br/><span class="highlight-cyan">morphological transducers</span> and <span class="highlight-cyan">machine translation systems</span><br />for Turkic languages.
 					</div>
 					<ul>
 						<li>Motivation for:
@@ -508,8 +512,10 @@
 
 				<section>
 					<h2>Morphological transducers: Uses</h2>
+					<div style="text-align: left;">
+					Example:
 					<table>
-						<tr><th style="align: right; !important;">Input / Output:</th><td><tt>Алмасы</tt></td>
+						<tr><th style="align: right; !important;">Input / Output:</th><td><b style="font-size: 125% !important">Алмасы</b></td>
 						<tr><th style="vertical-align: top !important; align: right;">Output / Input:</th><td>
 					<!-- алма<tag>n</tag><tag>px3sp</tag><tag>nom</tag>+е<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>pl</tag>
 					Алмас<tag>np</tag><tag>ant</tag><tag>m</tag><tag>px3sp</tag><tag>nom</tag>+е<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>sg</tag>
@@ -524,7 +530,7 @@
 					-->
 					алма<tag>n</tag><tag>px3sp</tag><tag>nom</tag><br/>
 					алмас<tag>n</tag><tag>px3sp</tag><tag>nom</tag><br/>
-					Алма<tag>np</tag><tag>ant</tag><tag>f</tag><tag>px3sp</tag><tag>nom</tag>$<br/>
+					Алма<tag>np</tag><tag>ant</tag><tag>f</tag><tag>px3sp</tag><tag>nom</tag><br/>
 					Алмас<tag>np</tag><tag>ant</tag><tag>m</tag><tag>px3sp</tag><tag>nom</tag><br/>
 					<!-- Алмас<tag>np</tag><tag>ant</tag><tag>f</tag><tag>px3sp</tag><tag>nom</tag> -->
 					ал<tag>v</tag><tag>tv</tag><tag>neg</tag><tag>gpr_fut</tag><tag>subst</tag><tag>px3sp</tag><tag>nom</tag><br/>
@@ -533,48 +539,99 @@
 					ал<tag>vaux</tag><tag>neg</tag><tag>ger_fut</tag><tag>px3sp</tag><tag>nom</tag>
 						</td></tr>
 					</table>
+					<br/>
+					Main uses:
 					<ul>
 						<li>Spell checkers</li>
-						<li></li>
-						<li>Linguistic research</li>
+						<li>Component of machine translation systems</li>
+						<li>Language-learning systems (e.g., Revita, <a href="https://revita.cs.helsinki.fi">revita.cs.helsinki.fi</a>)</li>
+						<li>Whatever else you can imagine</li>
 					</ul>
+					</div>
 				</section>
 
 				<section>
 					<h2>Morphological transducers: Languages</h2>
-					<div style="width: 30%; float:right;">
-
-						Production-level: 92%-98% coverage
+					<div style="width: 33%; float:left;">
+						<img src="img/lgs1.svg"/>
+						<span class="highlight-green">Production-level</span><br/>92%-98% coverage<br/>
+						<span style="font-size: 60%">(<bb>Tatar</bb>, <bb>Kazakh</bb>, <bb>Turkish</bb>, <bb>Kyrgyz</bb>, <bb>Crimean Tatar</bb>, <bb>Tuvan</bb>)</span>
 					</div>
-					<div style="width: 30%; float:right;">
-
-						Working: 88-93% coverage 
+					<div style="width: 41.25%; float:left;">
+						<img src="img/lgs2.svg"/>
+						<span class="highlight">Working</span><br/>88-93% coverage<br/>
+						<span style="font-size: 60%">(<bb>Bashqort</bb>, Chuvash, Uzbek, Qaraqalpaq, Uyghur, <bb>Sakha</bb>, Karachay-Balkar, <bb>Gagauz</bb>, <bb>Kumyk</bb>)</span>
 					</div>
-					<div style="width: 30%; float:right;">
-
-						Prototype: &lt;80% coverage
+					<div style="width: 24.75%; float:left;">
+						<img src="img/lgs3.svg"/>
+						<span class="highlight-red">Prototype</span><br/>&lt;80% coverage<br />
+						<span style="font-size: 60%">(Azerbaycani, Turkmen, Noghay, Khakas, Altay, Ottoman)</span>
 					</div>
 				</section>
 
-				<section>
+				<!-- section>
 					<h2>Morphological transducers: How</h2>
+				</section -->
+
+				<section>
+					<h2>Machine translation systems</h2>
+					<ul>
+						<li>Main uses</li>
+						<ul>
+							<li>Saving translators time: MT then post-editing</li>
+							<li>Assisting a speaker of one langage to understand material written in another language</li>
+							<li><s>Making production-ready legal documents, literature, marketing materials, etc.</s></li>
+						</ul>
+					</ul>
 				</section>
 
 				<section>
-					<h2>Machine translation systems: Uses</h2>
-				</section>
+					<h2>Machine translation pairs</h2>
+					<table class="shrink raln" style="float: left">
+						<tr><td><tt><bb>tat</bb></tt></td><td><tt><bb>bak</bb></tt></td><td>57510</td></tr>
+						<tr><td><tt>chv</tt></td><td><tt>tur</tt></td><td>31946</td></tr>
+						<tr><td><tt>chv</tt></td><td><tt>tat</tt></td><td>29512</td></tr>
+						<tr><td><tt>uzb</tt></td><td><tt>kaa</tt></td><td>19369</td></tr>
+						<tr><td><tt>uig</tt></td><td><tt>tur</tt></td><td>10194</td></tr>
+						<tr><td><tt><bb>kaz</bb></tt></td><td><tt><bb>tat</bb></tt></td><td>9956</td></tr>
+						<tr><td><tt>tur</tt></td><td><tt>aze</tt></td><td>8211</td></tr>
+						<tr><td><tt>kaz</tt></td><td><tt>kir</tt></td><td>8177</td></tr>
+						<tr><td><tt>tur</tt></td><td><tt>kir</tt></td><td>7824</td></tr>
+						<tr><td><tt><bb>kaz</bb></tt></td><td><tt><bb>tur</bb></tt></td><td>7636</td></tr>
+						<tr><td><tt><bb>crh</bb></tt></td><td><tt><bb>tur</bb></tt></td><td>7140</td></tr>
+						<tr><td><tt>kaz</tt></td><td><tt>kaa</tt></td><td>5425</td></tr>
+						<tr><td><tt>tur</tt></td><td><tt>uzb</tt></td><td>4359</td></tr>
+						<tr><td><tt>tur</tt></td><td><tt>tat</tt></td><td>4272</td></tr>
+						<tr><td><tt>kaz</tt></td><td><tt>sah</tt></td><td>2890</td></tr>
+						<tr><td><tt>kaz</tt></td><td><tt>uig</tt></td><td>2727</td></tr>
+						<tr><td><tt>kaz</tt></td><td><tt>kum</tt></td><td>563</td></tr>
+						<tr><td><tt>kir</tt></td><td><tt>uzb</tt></td><td>323</td></tr>
+						<tr><td><tt>kaz</tt></td><td><tt>tyv</tt></td><td>159</td></tr>
+					</table>
 
-				<section>
-					<h2>Machine translation systems: Language pairs</h2>
+					<table class="raln" style="float: right">
+						<tr><td><tt>eng</tt></td><td><tt>kaz</tt></td><td>33002</td></tr>
+						<tr><td><tt>kaz</tt></td><td><tt>rus</tt></td><td>29777</td></tr>
+						<tr><td><tt>tat</tt></td><td><tt>eng</tt></td><td>14985</td></tr>
+						<tr><td><tt>tat</tt></td><td><tt>rus</tt></td><td>6036</td></tr>
+						<tr><td><tt>eng</tt></td><td><tt>kir</tt></td><td>368</td></tr>
+						<tr><td><tt>khk</tt></td><td><tt>kaz</tt></td><td>140</td></tr>
+					</table>
 				</section>
 
 				<section>
 					<h2>Machine translation systems: How</h2>
-					<ul>
+					<ul style="width: 100%">
 						<li>Standard Apertium RBMT pipeline</li>
+						<img style="width: 100% !important;" class="noframe" src="img/architecture.svg"/>
+						<li>Any element may be</li>
+						<ul>
+							<li>augmented by statistical methods</li>
+							<li>replaced with corpus-based model (statistical, neural)</li>
+						</ul>
 					</ul>
-					<img style="width: 100% !important;" class="noframe" src="img/architecture.svg"/>
 				</section>
+
 
 				<section>
 					<h2>Machine translation systems: example</h2>
@@ -598,7 +655,82 @@
 				</section>
 
 				<section>
+					<h2>Lexical selection: example</h2>
+					<ul>
+						<li><ex><u>vaqıt</u></ex><lg>crh</lg> → <ex><u>vakit</u></ex><lg>tur</lg> <gl>time</gl></li>
+						<li><ex>bir <u>vaqıt</u></ex><lg>crh</lg> → <ex>bir <u>süre</u></ex><lg>tur</lg> <gl>(for) some time</gl></li>
+					</ul>
+					<p>Lexical transfer:</p>
+					<center>
+					<div class="codeblock" style="width: 88%; float: auto;">
+&lt;e&gt;&lt;p&gt;&lt;l&gt;vaqıt&lt;s n="n"/&gt;&lt;/l&gt;&lt;r&gt;vakit&lt;s n="n"/&gt;&lt;/r&gt;&lt;/p&gt;&lt;/e&gt;<br />
+&lt;e&gt;&lt;p&gt;&lt;l&gt;vaqıt&lt;s n="n"/&gt;&lt;/l&gt;&lt;r&gt;süre&lt;s n="n"/&gt;&lt;/r&gt;&lt;/p&gt;&lt;/e&gt;
+					</div>
+					<p>Lexical selection:</p>
+					<div class="codeblock" style="width: 60%; float: auto;">
+&lt;rule weight="1.2"&gt;<br/>
+&nbsp;&nbsp;&lt;match lemma="bir"/&gt;<br/>
+&nbsp;&nbsp;&lt;match lemma="vaqıt" tags="n.*"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;select lemma="süre" tags="n.*"/&gt;<br/>
+&nbsp;&nbsp;&lt;/match&gt;<br/>
+&lt;/rule&gt;<br/>
+<br/>
+&lt;rule weight="1.0"&gt;<br/>
+&nbsp;&nbsp;&lt;match lemma="vaqıt" tags="n.*"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;select lemma="vakit" tags="n.*"/&gt;<br/>
+&nbsp;&nbsp;&lt;/match&gt;<br/>
+&lt;/rule&gt;
+  					</div>
+					</center>
+					<!-- p>Currently 13 lexical selection rules.</p -->
+				</section>
+
+				<section>
+					<h2>Structural transfer: example</h2>
+					<ul style="margin-bottom: 1em;">
+						<li><ex>barğan soñ</ex><lg>crh</lg> → <ex>gittikten sonra</ex><lg>tur</lg> <gl>after going</gl></li>
+						<li><span class="code" style="font-size: 80% !important">^bar&lt;v&gt;&lt;iv&gt;&lt;ger_past&gt;&lt;nom&gt;$ ^soñ&lt;post&gt;$</span><lg>crh</lg> →<br/><span class="code" style="font-size: 80% !important">^git&lt;v&gt;&lt;iv&gt;&lt;ger_past&gt;<span class="highlight-cyan"/>&lt;abl&gt;</span>$ ^sonra&lt;post&gt;$</span><lg>tur</lg></li>
+					</ul>
+<center>
+<div class="codeblock" style="width: 88%; float: auto;">
+&lt;rule comment="REGLA: GAn soñ "&gt;<br/>
+&nbsp;&nbsp;&lt;pattern&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;pattern-item n="ger_past"/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;pattern-item n="soñ"/&gt;<br/>
+&nbsp;&nbsp;&lt;/pattern&gt;<br/>
+&nbsp;&nbsp;&lt;action&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;call-macro n="f_strip_tags"&gt;&lt;with-param pos="1"/&gt;&lt;/call-macro&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;let&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;clip pos="1" side="tl" part="a_cas"/&gt;<br/>
+<span class="highlight-cyan"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;lit-tag v="abl"/&gt;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/let&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;out&gt;&lt;chunk name="n" case="caseSecondWord"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tags&gt;&lt;tag&gt;&lt;lit-tag v="SP"/&gt;&lt;/tag&gt;&lt;/tags&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;lu&gt;&lt;clip pos="1" side="tl" part="whole"/&gt;&lt;/lu&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;b/&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;lu&gt;&lt;clip pos="2" side="tl" part="whole"/&gt;&lt;/lu&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/chunk&gt;&lt;/out&gt;<br/>
+&nbsp;&nbsp;&lt;/action&gt;<br/>
+&lt;/rule&gt;<br/>
+</rule>
+</div></center>
+					<!-- p>Currently 53 rules for <tt>crh-tur</tt> (and 9 for <tt>tur-crh</tt>)</p -->
+				</section>
+
+
+				<section>
 					<h2>Future work</h2>
+					<ul style="width: 100%">
+						<li>Revised Apertium RBMT pipeline</li>
+						<img style="width: 100% !important;" class="noframe" src="img/architecture2.svg"/>
+						<li>Additional optional elements:</li>
+						<ul>
+							<li>Multiwords and separable expressions (2017)</li>
+							<li>Anaphora resolution</li>
+							<li>Recursive structural transfer</li>
+						</ul>
+					</ul>
+
 				</section>
 
 				<section>
