@@ -122,11 +122,13 @@
 			table tr td {
 				color: white;
 				font-family: Arial !important;
+				font-size: 225% !important;
 			}
 			table tr th {
 				color: white;
 				text-align: center !important;
 				vertical-align: middle !important ;
+				font-size: 225% !important;
 			}
 			table tbody tr:last-child {
 				border-bottom: 1px solid white;
@@ -317,8 +319,9 @@
 			}
 
 			.box {
-				border: 2px solid white !important ;
+				border: 2pt solid lightgreen !important ;
 				padding: 10pt !important ;
+				margin: 1em !important ;
 			}
 
 			.rot90 {
@@ -390,7 +393,7 @@
 			blockquote {
 				border: 3px solid lightgreen;
 				padding: 0.5em !important;
-				font-style: normal !important ;
+				/** font-style: normal !important ; **/
 			}
 		</style>
 	</head>
@@ -450,16 +453,21 @@
 					<ul>
 						<li>Official status ≠ future survival</li>
 						<li>Language technology necessary for a language to survive digital age</li>
-						<blockquote>
+						<div class="box">
 							"only" ⅓ of 7000 languages are endangered,
 							but only 5% have sufficient level of access to language technology
 							(Kornai, 2013)
-						</blockquote>
+						</div>
 						<li>Situation of Turkic languages:
 						<ul>
 							<li>⅓ of languages officially considered endangered</li>
 							<li>Very little support for language technology</li>
 						</ul>
+						<li>What can we do about the current situation?</li>
+						<div class="box">
+								<em>"We live during a brief period of overlap between the mass extinction of the
+								world’s languages and the advent of the digital age."</em> — Bird (2009)
+						</div>
 					</ul>
 				</section>
 
@@ -471,22 +479,76 @@
 						<li>Advantages:</li>
 						<ul>
 							<li>No requirement for giant corpora</li>
-							<li>More precise than corpus-based</i>
-							<li>Easy to fix
+							<li>More precise than corpus-based</li>
+							<li>Easy to fix errors and expand coverage</li>
+							<li>Only need knowledge of language, not mathematics and programming</li>
 						</ul>
+						<li>Disadvantages:</li>
+						<ul>
+							<li>...Need knowledge of language, not mathematics and programming</li>
+							<li>Takes time to develop</li>
+						</ul>
+						<li>I.e., <!-- in principle --><span class="highlight">community-maintainable</span></li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Motivation: Free/Open-Source Software</h2>
+					<div class="box">
+						Free = бесплатно + свободно<br />
+						Open = открыто + доступно
+					</div>
+					<ul>
+						<li>Available for anyone to use or modify</li>
+						<li>Support from developers</li>
+						<li>Robust community (Apertium)</li>
+						<li>I.e., <!-- in principle --><span class="highlight">accessible to community</span></li>
+					</ul>
 				</section>
 
 				<section>
 					<h2>Morphological transducers: Uses</h2>
+					<table>
+						<tr><th style="align: right; !important;">Input / Output:</th><td><tt>Алмасы</tt></td>
+						<tr><th style="vertical-align: top !important; align: right;">Output / Input:</th><td>
+					<!-- алма<tag>n</tag><tag>px3sp</tag><tag>nom</tag>+е<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>pl</tag>
+					Алмас<tag>np</tag><tag>ant</tag><tag>m</tag><tag>px3sp</tag><tag>nom</tag>+е<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>sg</tag>
+					Алмас<tag>np</tag><tag>ant</tag><tag>m</tag><tag>px3sp</tag><tag>nom</tag>+е<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>pl</tag>
+					Алмас<tag>np</tag><tag>ant</tag><tag>f</tag><tag>px3sp</tag><tag>nom</tag>+е<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>sg</tag>
+					Алмас<tag>np</tag><tag>ant</tag><tag>f</tag><tag>px3sp</tag><tag>nom</tag>+е<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>pl</tag>
+					алмас<tag>n</tag><tag>px3sp</tag><tag>nom</tag>+е<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>sg</tag>
+					алмас<tag>n</tag><tag>px3sp</tag><tag>nom</tag>+е<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>pl</tag>
+					Алма<tag>np</tag><tag>ant</tag><tag>f</tag><tag>px3sp</tag><tag>nom</tag>+е<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>sg</tag>
+					Алма<tag>np</tag><tag>ant</tag><tag>f</tag><tag>px3sp</tag><tag>nom</tag>+е<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>pl</tag>
+					алма<tag>n</tag><tag>px3sp</tag><tag>nom</tag>+е<tag>cop</tag><tag>aor</tag><tag>p3</tag><tag>sg</tag>
+					-->
+					алма<tag>n</tag><tag>px3sp</tag><tag>nom</tag><br/>
+					алмас<tag>n</tag><tag>px3sp</tag><tag>nom</tag><br/>
+					Алма<tag>np</tag><tag>ant</tag><tag>f</tag><tag>px3sp</tag><tag>nom</tag>$<br/>
+					Алмас<tag>np</tag><tag>ant</tag><tag>m</tag><tag>px3sp</tag><tag>nom</tag><br/>
+					<!-- Алмас<tag>np</tag><tag>ant</tag><tag>f</tag><tag>px3sp</tag><tag>nom</tag> -->
+					ал<tag>v</tag><tag>tv</tag><tag>neg</tag><tag>gpr_fut</tag><tag>subst</tag><tag>px3sp</tag><tag>nom</tag><br/>
+					ал<tag>vaux</tag><tag>neg</tag><tag>gpr_fut</tag><tag>subst</tag><tag>px3sp</tag><tag>nom</tag><br/>
+					ал<tag>v</tag><tag>tv</tag><tag>neg</tag><tag>ger_fut</tag><tag>px3sp</tag><tag>nom</tag><br/>
+					ал<tag>vaux</tag><tag>neg</tag><tag>ger_fut</tag><tag>px3sp</tag><tag>nom</tag>
+						</td></tr>
+					</table>
 				</section>
 
 				<section>
 					<h2>Morphological transducers: Languages</h2>
+					<div style="width: 30%; float:right;">
+
+						92%-98% coverage
+					</div>
+					<div style="width: 30%; float:right;">
+
+						88-93% coverage 
+					</div>
+					<div style="width: 30%; float:right;">
+
+						&lt;80% coverage
+					</div>
 				</section>
 
 				<section>
@@ -503,6 +565,10 @@
 
 				<section>
 					<h2>Machine translation systems: How</h2>
+					<ul>
+						<li>Standard Apertium RBMT pipeline</li>
+					</ul>
+					<img style="width: 100% !important;" class="noframe" src="img/architecture.svg"/>
 				</section>
 
 				<section>
